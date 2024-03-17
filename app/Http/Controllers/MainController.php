@@ -12,6 +12,7 @@ use App\Models\Product;
 use App\Models\Review;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MainController extends Controller
 {
@@ -102,11 +103,14 @@ class MainController extends Controller
 
     public function accountShipping()
     {
-        return view('User.account-shipping');
+        $shippingDetail = Auth::user()->shipping;
+        
+        return view('User.account-shipping', compact('shippingDetail'));
     }
 
     public function account()
     {
+        
         return view('User.account');
     }
 

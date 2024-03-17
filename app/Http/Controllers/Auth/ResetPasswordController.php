@@ -13,7 +13,7 @@ class ResetPasswordController extends Controller
     // Show password reset form
     public function showResetForm(Request $request, $token)
     {
-        return view('auth.reset-password', ['token' => $token, 'email' => $request->email]);
+        return view('Auth.reset-password', ['token' => $token, 'email' => $request->email]);
     }
 
     // Handle password reset

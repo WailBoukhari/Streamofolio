@@ -37,17 +37,19 @@ class RegisterController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'email_verified_at' => null,
+
         ]);
+        
 
         event(new Registered($user));
-
-        // Check if email is verified
-        if (!$user->hasVerifiedEmail()) {
-            return redirect()->route('verification.notice')->with('status', 'A verification email has been sent to your email address. Please verify your email to activate your account.');
-        }
-
         Auth::login($user);
 
-        return redirect()->route('dashboard')->with('status', 'You have successfully registered and logged in.');
+        if (!$user->hasVerifiedEmail()) {
+            return redirect()->route('verification.notice');
+        } else {
+            return redirect()->route('dashboard');
+        }
+        
     }
 }

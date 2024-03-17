@@ -1,8 +1,12 @@
 <?php
 
+
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
+
+
+
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -11,9 +15,8 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        $middleware->use([
-            'auth' => \App\Http\Middleware\AuthMiddleware::class,
-
+        $middleware->alias([
+            'auth.verify' => App\Http\Middleware\AuthenticateAndVerify::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

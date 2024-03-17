@@ -10,7 +10,7 @@ class EmailVerificationController extends Controller
 {
     public function show()
     {
-        return view('auth.verify-email');
+        return view('Auth.verify-email');
     }
     public function sendVerificationEmail(Request $request)
     {

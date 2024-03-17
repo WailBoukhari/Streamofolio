@@ -39,6 +39,6 @@ class ShippingController extends Controller
         $shipping->save();
 
         // Redirect back with a success message
-        return redirect()->back()->with('success', 'Shipping details saved successfully.');
+        return redirect('account-shipping')->back()->with('success', 'Shipping details saved successfully.');
     }
 }
