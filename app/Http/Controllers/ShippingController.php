@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Shipping;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ShippingController extends Controller
 {
@@ -22,7 +23,7 @@ class ShippingController extends Controller
             'shipping-city' => 'required',
             'shipping-zip' => 'required',
         ]);
-
+        $user = Auth::user();
         // Create a new shipping instance
         $shipping = new Shipping;
         $shipping->first_name = $validatedData['shipping-first-name'];
@@ -34,11 +35,13 @@ class ShippingController extends Controller
         $shipping->state = $validatedData['shipping-state'];
         $shipping->city = $validatedData['shipping-city'];
         $shipping->zip = $validatedData['shipping-zip'];
+        $shipping->zip = $validatedData['shipping-zip'];
+        $shipping->user_id = $user->id;
 
         // Save the shipping details
         $shipping->save();
 
         // Redirect back with a success message
-        return redirect('account-shipping')->back()->with('success', 'Shipping details saved successfully.');
+        return redirect()->back()->with('success', 'Shipping details saved successfully.');
     }
 }

@@ -2,25 +2,6 @@
     
       <div class="pt-12 pb-20 lg:pb-44 lg:pt-24 xl:pt-[105px]">
         <div class="container">
-
-          <nav class="mb-7 border-b border-gray-50 pb-6 dark:border-gray-600 sm:mb-8 sm:pb-7 md:mb-10 md:pb-8 lg:mb-12 lg:pb-10 xl:mb-14 xl:pb-12">
-            <ul class="flex flex-col flex-wrap gap-y-4 gap-x-6 xl:gap-x-10 font-bold uppercase tracking-tighter sm:flex-row sm:justify-center md:text-lg">
-              <li>
-                <a class="transition-all text-gray-900 hover:text-primary dark:text-white dark:hover:text-primary" href="_str2-account-info.html">Personal Info</a>
-              </li>
-
-              <li>
-                <a class="transition-all text-gray-900 hover:text-primary dark:text-white dark:hover:text-primary" href="_str2-account-shipping.html">Shipping Details</a>
-              </li>
-              <li>
-                <a class="transition-all text-primary" href="_str2-account-orders.html">Orders</a>
-              </li>
-              <li>
-                <a class="transition-all text-gray-900 hover:text-primary dark:text-white dark:hover:text-primary" href="#.html">Logout</a>
-              </li>
-            </ul>
-          </nav>
-
           <div class="mb-7 lg:mb-8 xl:mb-10 pb-7 md:pb-8 lg:pb-10 xl:pb-14 border-b border-gray-400 dark:border-gray-600">
             <div class="flex flex-wrap items-baseline mb-8 md:mb-9 lg:mb-12.5 gap-y-2 gap-x-6 xl:gap-x-9 border-y border-gray-400 dark:border-gray-600 py-7">
               <h3 class="font-bold text-xl lg:text-3xl xl:text-[32px] text-gray-900 dark:text-white">

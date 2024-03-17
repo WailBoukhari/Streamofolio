@@ -20,7 +20,6 @@ class ReviewController extends Controller
 
         // Get the authenticated user
         $user = Auth::user();
-
         // Create a new review instance
         $review = new Review();
         $review->title = $validatedData['review-title'];
