@@ -15,12 +15,12 @@ class GearFactory extends Factory
     public function definition(): array
     {
         $imageUrls = [
-            'headset' => 'assets/img/str2/samples/gear-2-170x170.jpg',
-            'gamer-mouse' => 'assets/img/str2/samples/gear-1-170x170.jpg',
-            'keyboard' => 'assets/img/str2/samples/gear-3-170x170.jpg',
-            'screen' => 'assets/img/str2/samples/gear-4-170x170.jpg',
-            'gaming-chair' => 'assets/img/str2/samples/gear-5-170x170.jpg',
-            'mousepad-mouse' => 'assets/img/str2/samples/gear-6-170x170.jpg',
+            'headset' => 'assets/img/main/samples/gear-2-170x170.jpg',
+            'gamer-mouse' => 'assets/img/main/samples/gear-1-170x170.jpg',
+            'keyboard' => 'assets/img/main/samples/gear-3-170x170.jpg',
+            'screen' => 'assets/img/main/samples/gear-4-170x170.jpg',
+            'gaming-chair' => 'assets/img/main/samples/gear-5-170x170.jpg',
+            'mousepad-mouse' => 'assets/img/main/samples/gear-6-170x170.jpg',
         ];
 
         $tags = array_keys($imageUrls);

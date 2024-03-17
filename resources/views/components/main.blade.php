@@ -11,9 +11,9 @@
         <meta name="author" content="Dan Fisher">
         <meta name="keywords" content="youtube, streamer, stream, creator">
         <!-- Favicons -->
-        <link rel="shortcut icon" href="{{ asset('assets/img/str2/favicons/favicon.ico') }}">
-        <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('assets/img/str2/favicons/favicon-120.png') }}">
-        <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('assets/img/str2/favicons/favicon-152.png') }}">
+        <link rel="shortcut icon" href="{{ asset('assets/img/main/favicons/favicon.ico') }}">
+        <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('assets/img/main/favicons/favicon-120.png') }}">
+        <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('assets/img/main/favicons/favicon-152.png') }}">
         <!-- Mobile Specific Metas -->
         <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
         <!-- Google Web Fonts -->
@@ -26,7 +26,7 @@
         <link href="{{ asset('assets/vendors/common/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
         <link href="{{ asset('assets/vendors/common/swiper/css/swiper-bundle.min.css') }}" rel="stylesheet">
         <!-- Template CSS -->
-        <link href="{{ asset('assets/css/str2/style.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/css/main/style.css') }}" rel="stylesheet">
     </head>
 
     <body
@@ -37,13 +37,13 @@
                 {{ $slot }}
             </main>
         </div>
-        < <footer id="site-footer">
+        <footer id="site-footer">
 
             <div class="bg-gray-50 py-12 dark:bg-gray-900 sm:py-16 md:py-20 lg:py-24 xl:py-[104px]">
                 <div class="mx-auto max-w-[1440px] px-5">
                     <div class="grid grid-cols-1 items-baseline justify-center gap-y-10 lg:grid-cols-[20%_1fr_20%]">
                         <div class="justify-self-center lg:justify-self-start">
-                            <a href="_str2-index.html">
+                            <a href="_main-index.html">
                                 <svg width="96" height="26" viewBox="0 0 96 26" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path class="fill-primary" fill-rule="evenodd" clip-rule="evenodd"
@@ -120,7 +120,7 @@
                                 <a class="text-gray-900 transition-colors hover:text-primary dark:text-white dark:hover:text-primary"
                                     href="https://www.facebook.com/danfisher.dev/" title="Facebook">
                                     <svg class="h-4 w-4" fill="currentColor">
-                                        <use xlink:href="assets/img/social-icons.svg#facebook"></use>
+                                        <use xlink:href="assets/img/main/social-icons.svg#facebook"></use>
                                     </svg>
                                 </a>
                             </li>
@@ -128,7 +128,7 @@
                                 <a class="text-gray-900 transition-colors hover:text-primary dark:text-white dark:hover:text-primary"
                                     href="https://twitter.com/danfisher_dev" title="Twitter">
                                     <svg class="h-4 w-4" fill="currentColor">
-                                        <use xlink:href="assets/img/social-icons.svg#twitter"></use>
+                                        <use xlink:href="assets/img/main/social-icons.svg#twitter"></use>
                                     </svg>
                                 </a>
                             </li>
@@ -136,7 +136,7 @@
                                 <a class="text-gray-900 transition-colors hover:text-primary dark:text-white dark:hover:text-primary"
                                     href="https://instagram.com/dan.fisher.dev/" title="Instagram">
                                     <svg class="h-4 w-4" fill="currentColor">
-                                        <use xlink:href="assets/img/social-icons.svg#instagram"></use>
+                                        <use xlink:href="assets/img/main/social-icons.svg#instagram"></use>
                                     </svg>
                                 </a>
                             </li>
@@ -144,7 +144,7 @@
                                 <a class="text-gray-900 transition-colors hover:text-primary dark:text-white dark:hover:text-primary"
                                     href="https://twitch.tv/" title="Twitch">
                                     <svg class="h-4 w-4" fill="currentColor">
-                                        <use xlink:href="assets/img/social-icons.svg#twitch"></use>
+                                        <use xlink:href="assets/img/main/social-icons.svg#twitch"></use>
                                     </svg>
                                 </a>
                             </li>
@@ -152,7 +152,7 @@
                                 <a class="text-gray-900 transition-colors hover:text-primary dark:text-white dark:hover:text-primary"
                                     href="https://discord.com" title="Discord">
                                     <svg class="h-4 w-4" fill="currentColor">
-                                        <use xlink:href="assets/img/social-icons.svg#discord"></use>
+                                        <use xlink:href="assets/img/main/social-icons.svg#discord"></use>
                                     </svg>
                                 </a>
                             </li>
@@ -160,7 +160,7 @@
                                 <a class="text-gray-900 transition-colors hover:text-primary dark:text-white dark:hover:text-primary"
                                     href="https://patreon.com" title="Patreon">
                                     <svg class="h-4 w-4" fill="currentColor">
-                                        <use xlink:href="assets/img/social-icons.svg#patreon"></use>
+                                        <use xlink:href="assets/img/main/social-icons.svg#patreon"></use>
                                     </svg>
                                 </a>
                             </li>
@@ -229,7 +229,7 @@
                             </svg>
 
                             <img class="hidden sm:block absolute left-0 top-0 h-full z-[5] object-cover aspect-[251/140]"
-                                src="assets/img/str2/samples/modal-header-hero.png" alt="">
+                                src="assets/img/main/samples/modal-header-hero.png" alt="">
                         </div>
 
                         <div>
@@ -313,7 +313,7 @@
                                                 <a href="#"
                                                     class="inline-flex text-center font-bold leading-none transition-colors uppercase justify-center gap-x-3 py-4 px-4 md:py-[18px] lg:px-8 text-sm text-white bg-social-facebook hover:bg-social-facebook/90 flex-1">
                                                     <svg class="h-[14px] w-[14px]" fill="currentColor">
-                                                        <use xlink:href="assets/img/social-icons.svg#facebook"></use>
+                                                        <use xlink:href="assets/img/main/social-icons.svg#facebook"></use>
                                                     </svg>
                                                     Login
 
@@ -321,7 +321,7 @@
                                                 <a href="#"
                                                     class="inline-flex text-center font-bold leading-none transition-colors uppercase justify-center gap-x-3 py-4 px-4 md:py-[18px] lg:px-8 text-sm text-white bg-social-twitter hover:bg-social-twitter/90 flex-1">
                                                     <svg class="h-[14px] w-[14px]" fill="currentColor">
-                                                        <use xlink:href="assets/img/social-icons.svg#twitter"></use>
+                                                        <use xlink:href="assets/img/main/social-icons.svg#twitter"></use>
                                                     </svg>
                                                     Login
 
@@ -384,7 +384,7 @@
                                                 <p>You’ll receive a confirmation email in your inbox with a link so you
                                                     can activate your account. If you have any problems, <a
                                                         class="text-primary hover:text-primary dark:hover:text-white transition-colors"
-                                                        href="_str2-contact.html">contact us</a>!</p>
+                                                        href="_main-contact.html">contact us</a>!</p>
                                             </div>
                                         </form>
 
@@ -405,8 +405,8 @@
             <script src="{{ asset('assets/vendors/common/swiper/js/swiper-bundle.min.js') }}"></script>
 
             <!-- Template JS -->
-            <script src="{{ asset('assets/js/common.js') }}"></script>
-            <script src="{{ asset('assets/js/str2/init.js') }}"></script>
+            <script src="{{ asset('assets/js/main/common.js') }}"></script>
+            <script src="{{ asset('assets/js/main/init.js') }}"></script>
     </body>
 
 </html>

@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Admin;
+use App\Models\Affiliate;
 use App\Models\Gear;
 use App\Models\Partner;
+use App\Models\Product;
+use App\Models\Review;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -19,32 +22,49 @@ class MainController extends Controller
         $admin = Admin::first();
         $partners = Partner::all();
         // Pass the gear items to the view
-        return view('frontEnd.home', compact('gearItems', 'user', 'admin', 'partners'));
+        return view('User.home', compact('gearItems', 'user', 'admin', 'partners'));
     }
 
     public function affiliates()
     {
-        return view('frontEnd.affiliates');
+        $affiliates = Affiliate::all();
+        return view('User.affiliates', compact('affiliates'));
     }
 
     public function cart()
     {
-        return view('frontEnd.cart');
+        return view('User.cart');
     }
 
     public function contact()
     {
-        return view('frontEnd.contact');
+        return view('User.contact');
     }
 
-    public function shop()
+    public function shop(Request $request)
     {
-        return view('frontEnd.shop');
+        $categories = Product::distinct()->pluck('category');
+
+        // Initialize products query
+        $productsQuery = Product::query();
+
+        // Filter products by category if a category is selected
+        if ($request->has('category')) {
+            $productsQuery->where('category', $request->category);
+        }
+
+        // Paginate the products
+        $products = $productsQuery->paginate(9);
+        return view('User.shop', compact('products', 'categories'));
     }
 
-    public function singleProduct()
+    public function singleProduct($id)
     {
-        return view('frontEnd.single-product');
+        $product = Product::findOrFail($id);
+        $reviews = Review::all();
+      
+       
+        return view('User.single-product', compact('product', 'reviews'));
     }
 
     public function stream()
@@ -58,7 +78,7 @@ class MainController extends Controller
             $twitchUsername = $admin->twitch_username;
             $aliase = $admin->aliase;
         }
-        return view('frontEnd.stream', compact(
+        return view('User.stream', compact(
             'schedule',
             'twitchUsername',
             'aliase'
@@ -68,31 +88,35 @@ class MainController extends Controller
     }
     public function accountBilling()
     {
-        return view('frontEnd.account-billing');
+        return view('User.account-billing');
     }
 
     public function accountInfo()
     {
-        return view('frontEnd.account-info');
+        return view('User.account-info');
     }
 
     public function accountOrders()
     {
-        return view('frontEnd.account-orders');
+        return view('User.account-orders');
     }
 
     public function accountShipping()
     {
-        return view('frontEnd.account-shipping');
+        return view('User.account-shipping');
     }
 
     public function account()
     {
-        return view('frontEnd.account');
+        return view('User.account');
     }
 
     public function checkout()
     {
-        return view('frontEnd.checkout');
+        return view('User.checkout');
+    }
+    public function dashboard()
+    {
+        return view('Admin.dashboard');
     }
 }

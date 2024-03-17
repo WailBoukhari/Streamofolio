@@ -10,7 +10,7 @@
                             <a class="text-gray-900 transition-colors hover:text-primary dark:text-white dark:hover:text-primary"
                                 href="https://www.facebook.com/danfisher.dev/" title="Facebook">
                                 <svg class="w-3.5 xl:w-4 aspect-square" fill="currentColor">
-                                    <use xlink:href="assets/img/social-icons.svg#facebook"></use>
+                                    <use xlink:href="assets/img/main/social-icons.svg#facebook"></use>
                                 </svg>
                             </a>
                         </li>
@@ -18,7 +18,7 @@
                             <a class="text-gray-900 transition-colors hover:text-primary dark:text-white dark:hover:text-primary"
                                 href="https://twitter.com/danfisher_dev" title="Twitter">
                                 <svg class="w-3.5 xl:w-4 aspect-square" fill="currentColor">
-                                    <use xlink:href="assets/img/social-icons.svg#twitter"></use>
+                                    <use xlink:href="assets/img/main/social-icons.svg#twitter"></use>
                                 </svg>
                             </a>
                         </li>
@@ -26,7 +26,7 @@
                             <a class="text-gray-900 transition-colors hover:text-primary dark:text-white dark:hover:text-primary"
                                 href="https://instagram.com/dan.fisher.dev/" title="Instagram">
                                 <svg class="w-3.5 xl:w-4 aspect-square" fill="currentColor">
-                                    <use xlink:href="assets/img/social-icons.svg#instagram"></use>
+                                    <use xlink:href="assets/img/main/social-icons.svg#instagram"></use>
                                 </svg>
                             </a>
                         </li>
@@ -34,7 +34,7 @@
                             <a class="text-gray-900 transition-colors hover:text-primary dark:text-white dark:hover:text-primary"
                                 href="https://twitch.tv/" title="Twitch">
                                 <svg class="w-3.5 xl:w-4 aspect-square" fill="currentColor">
-                                    <use xlink:href="assets/img/social-icons.svg#twitch"></use>
+                                    <use xlink:href="assets/img/main/social-icons.svg#twitch"></use>
                                 </svg>
                             </a>
                         </li>
@@ -42,7 +42,7 @@
                             <a class="text-gray-900 transition-colors hover:text-primary dark:text-white dark:hover:text-primary"
                                 href="https://discord.com" title="Discord">
                                 <svg class="w-3.5 xl:w-4 aspect-square" fill="currentColor">
-                                    <use xlink:href="assets/img/social-icons.svg#discord"></use>
+                                    <use xlink:href="assets/img/main/social-icons.svg#discord"></use>
                                 </svg>
                             </a>
                         </li>
@@ -50,7 +50,7 @@
                             <a class="text-gray-900 transition-colors hover:text-primary dark:text-white dark:hover:text-primary"
                                 href="https://patreon.com" title="Patreon">
                                 <svg class="w-3.5 xl:w-4 aspect-square" fill="currentColor">
-                                    <use xlink:href="assets/img/social-icons.svg#patreon"></use>
+                                    <use xlink:href="assets/img/main/social-icons.svg#patreon"></use>
                                 </svg>
                             </a>
                         </li>
@@ -108,7 +108,7 @@
                                     Shop
                                     <svg role="img"
                                         class="h-2 w-2 rotate-90 fill-gray-900 dark:fill-white absolute -right-3 top-1/2 -translate-y-1/2">
-                                        <use xlink:href="assets/img/str2/sprite.svg#arrow-right"></use>
+                                        <use xlink:href="assets/img/main/sprite.svg#arrow-right"></use>
                                     </svg>
                                 </a>
                                 <ul
@@ -119,12 +119,7 @@
                                             Shop Page
                                         </a>
                                     </li>
-                                    <li class="px-5.5">
-                                        <a class="flex items-center justify-between py-1.5 transition-colors text-gray-900 hover:text-primary dark:text-white dark:hover:text-primary"
-                                            href="{{ route('single-product') }}">
-                                            Single Product
-                                        </a>
-                                    </li>
+
                                     <li class="px-5.5">
                                         <a class="flex items-center justify-between py-1.5 transition-colors text-gray-900 hover:text-primary dark:text-white dark:hover:text-primary"
                                             href="{{ route('cart') }}">
@@ -205,7 +200,7 @@
                             class="relative [&>.sub-menu]:lg:hover:visible [&>.sub-menu]:hover:animate-popper-pop-in [&>.sub-menu]:lg:hover:opacity-100">
                             <a class="block py-4 px-2 xl:px-3" href="{{ route('account') }}">
                                 <svg role="img" class="h-6 w-6 fill-gray-900 dark:fill-white">
-                                    <use xlink:href="assets/img/str2/sprite.svg#user"></use>
+                                    <use xlink:href="assets/img/main/sprite.svg#user"></use>
                                 </svg>
                             </a>
 
@@ -249,7 +244,7 @@
                             class="relative [&>.sub-menu]:lg:hover:visible [&>.sub-menu]:hover:animate-popper-pop-in [&>.sub-menu]:lg:hover:opacity-100 lg:-mr-2">
                             <a class="relative block py-4 px-1 sm:px-2" href="{{ route('cart') }}">
                                 <svg role="img" class="h-6 w-6 fill-gray-900 dark:fill-white">
-                                    <use xlink:href="assets/img/str2/sprite.svg#shopping-basket"></use>
+                                    <use xlink:href="assets/img/main/sprite.svg#shopping-basket"></use>
                                 </svg>
                                 <span
                                     class="absolute top-1 -right-2 text-3xs font-bold leading-none w-4.5 h-4.5 rounded-full bg-primary inline-flex justify-center items-center">2</span>
@@ -270,11 +265,11 @@
                         <button class="js-menu-toggle -mr-2 ml-2 inline-flex py-4 px-2 sm:px-3 lg:hidden xl:px-4">
                             <svg role="img"
                                 class="js-menu-toggle-icon-open h-6 w-6 fill-gray-900 dark:fill-white">
-                                <use xlink:href="assets/img/str2/sprite.svg#menu"></use>
+                                <use xlink:href="assets/img/main/sprite.svg#menu"></use>
                             </svg>
                             <svg role="img"
                                 class="js-menu-toggle-icon-close hidden h-6 w-6 fill-gray-900 dark:fill-white">
-                                <use xlink:href="assets/img/str2/sprite.svg#menu-close"></use>
+                                <use xlink:href="assets/img/main/sprite.svg#menu-close"></use>
                             </svg>
                         </button>
 
@@ -324,7 +319,7 @@
                     <button
                         class="js-mobile-submenu-toggle ml-auto inline-flex h-7 w-7 items-center justify-center transition-transform">
                         <svg role="img" class="sub-menu-toggle h-2 w-2 rotate-90 fill-primary dark:fill-white">
-                            <use xlink:href="assets/img/str2/sprite.svg#arrow-right"></use>
+                            <use xlink:href="assets/img/main/sprite.svg#arrow-right"></use>
                         </svg>
                     </button>
                     <ul
@@ -335,12 +330,7 @@
                                 Shop Page
                             </a>
                         </li>
-                        <li class="flex flex-wrap items-center gap-x-4">
-                            <a class="flex-grow gap-x-1 py-2 text-gray-900 transition-colors hover:text-primary dark:text-white dark:hover:text-primary"
-                                href="{{ route('single-product') }}">
-                                Single Product
-                            </a>
-                        </li>
+
                         <li class="flex flex-wrap items-center gap-x-4">
                             <a class="flex-grow gap-x-1 py-2 text-gray-900 transition-colors hover:text-primary dark:text-white dark:hover:text-primary"
                                 href="{{ route('cart') }}">
@@ -390,7 +380,7 @@
                     <a class="text-primary transition-colors hover:text-primary dark:text-white dark:hover:text-primary"
                         href="https://www.facebook.com/danfisher.dev/" title="Facebook">
                         <svg class="h-4 w-4" fill="currentColor">
-                            <use xlink:href="assets/img/social-icons.svg#facebook"></use>
+                            <use xlink:href="assets/img/main/social-icons.svg#facebook"></use>
                         </svg>
                     </a>
                 </li>
@@ -398,7 +388,7 @@
                     <a class="text-primary transition-colors hover:text-primary dark:text-white dark:hover:text-primary"
                         href="https://twitter.com/danfisher_dev" title="Twitter">
                         <svg class="h-4 w-4" fill="currentColor">
-                            <use xlink:href="assets/img/social-icons.svg#twitter"></use>
+                            <use xlink:href="assets/img/main/social-icons.svg#twitter"></use>
                         </svg>
                     </a>
                 </li>
@@ -406,7 +396,7 @@
                     <a class="text-primary transition-colors hover:text-primary dark:text-white dark:hover:text-primary"
                         href="https://instagram.com/dan.fisher.dev/" title="Instagram">
                         <svg class="h-4 w-4" fill="currentColor">
-                            <use xlink:href="assets/img/social-icons.svg#instagram"></use>
+                            <use xlink:href="assets/img/main/social-icons.svg#instagram"></use>
                         </svg>
                     </a>
                 </li>
@@ -414,7 +404,7 @@
                     <a class="text-primary transition-colors hover:text-primary dark:text-white dark:hover:text-primary"
                         href="https://twitch.tv/" title="Twitch">
                         <svg class="h-4 w-4" fill="currentColor">
-                            <use xlink:href="assets/img/social-icons.svg#twitch"></use>
+                            <use xlink:href="assets/img/main/social-icons.svg#twitch"></use>
                         </svg>
                     </a>
                 </li>
@@ -422,7 +412,7 @@
                     <a class="text-primary transition-colors hover:text-primary dark:text-white dark:hover:text-primary"
                         href="https://discord.com" title="Discord">
                         <svg class="h-4 w-4" fill="currentColor">
-                            <use xlink:href="assets/img/social-icons.svg#discord"></use>
+                            <use xlink:href="assets/img/main/social-icons.svg#discord"></use>
                         </svg>
                     </a>
                 </li>
@@ -430,7 +420,7 @@
                     <a class="text-primary transition-colors hover:text-primary dark:text-white dark:hover:text-primary"
                         href="https://patreon.com" title="Patreon">
                         <svg class="h-4 w-4" fill="currentColor">
-                            <use xlink:href="assets/img/social-icons.svg#patreon"></use>
+                            <use xlink:href="assets/img/main/social-icons.svg#patreon"></use>
                         </svg>
                     </a>
                 </li>

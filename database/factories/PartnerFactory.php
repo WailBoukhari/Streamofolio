@@ -25,12 +25,12 @@ class PartnerFactory extends Factory
 
         // Generate a random image URL for each partner
         $imageUrls = [
-            'assets\img\str2\sponsor-1-sm.png',
-            'assets\img\str2\sponsor-2-sm.png',
-            'assets\img\str2\sponsor-3-sm.png',
-            'assets\img\str2\sponsor-4-sm.png',
-            'assets\img\str2\sponsor-5-sm.png',
-            'assets\img\str2\sponsor-6-sm.png',
+            'assets\img\main\sponsor-1-sm.png',
+            'assets\img\main\sponsor-2-sm.png',
+            'assets\img\main\sponsor-3-sm.png',
+            'assets\img\main\sponsor-4-sm.png',
+            'assets\img\main\sponsor-5-sm.png',
+            'assets\img\main\sponsor-6-sm.png',
         ];
 
         return [
