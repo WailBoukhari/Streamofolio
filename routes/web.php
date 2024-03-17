@@ -19,7 +19,7 @@ Route::get('/stream', [MainController::class, 'stream'])->name('stream');
 Route::get('/donate', [MainController::class, 'donate'])->name('donate');
 
 
-Route::middleware(['auth.verify'])->group(function () {
+Route::middleware(['auth.verify' ,'client'])->group(function () {
     Route::get('/account-info', [MainController::class, 'accountInfo'])->name('account-info');
     Route::get('/account-orders', [MainController::class, 'accountSrders'])->name('account-orders');
     Route::get('/account-shipping', [MainController::class, 'accountShipping'])->name('account-shipping');
@@ -27,14 +27,12 @@ Route::middleware(['auth.verify'])->group(function () {
     Route::get('/account', [MainController::class, 'account'])->name('account');
     Route::post('/store-review', [ReviewController::class, 'store'])->name('store.review');
     Route::get('/cart', [MainController::class, 'cart'])->name('cart');
-    Route::get('/dashboard', [MainController::class, 'dashboard'])->name('dashboard');
     Route::get('/checkout', [MainController::class, 'checkout'])->name('checkout');
-
 });
 
 
-Route::middleware(['auth.verify'])->group(function () {
-   
+Route::middleware(['auth.verify', 'admin'])->group(function () {
+    Route::get('/dashboard', [MainController::class, 'dashboard'])->name('dashboard');
 });
 
 // Login route

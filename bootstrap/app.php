@@ -1,9 +1,19 @@
 <?php
 
 
+use App\Http\Middleware\AdminRoleMiddleware;
+use App\Http\Middleware\AuthenticateAndVerify;
+use App\Http\Middleware\ClientRoleMiddleware;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
+
+
+
+
+
+
+
 
 
 
@@ -16,7 +26,9 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->alias([
-            'auth.verify' => App\Http\Middleware\AuthenticateAndVerify::class,
+            'auth.verify' => AuthenticateAndVerify::class,
+            'admin' => AdminRoleMiddleware::class,
+            'client' => ClientRoleMiddleware::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
