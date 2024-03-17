@@ -198,215 +198,73 @@
                     </div>
                 </div>
             </div>
-            </footer>
-            <dialog id="login-register"
-                class="js-vv-modal mx-auto w-[470px] max-w-[90%] border-none bg-transparent p-0 backdrop:bg-gray-900/90">
-
-                <div class="pt-[22px]">
-                    <div class="bg-white dark:bg-gray-700 shadow-3xl overflow-y-auto">
-                        <div
-                            class="relative overflow-hidden isolate flex h-28 items-center bg-primary px-6 md:px-10 lg:h-[140px]">
-                            <div class="relative z-[4] text-white sm:ml-[56%]">
-                                <h4
-                                    class="text-2xl leading-none font-bold mb-1 lg:text-3xl xl:text-[38px] xl:leading-[0.74em] tracking-tighter uppercase">
-                                    <span>Login &</span>
-                                    <span class="block xl:leading-none xl:text-[32px]">Register</span>
-                                </h4>
-                                <div class="font-bold leading-none uppercase tracking-tighter">I’m glad to see you
-                                    here!</div>
+        </footer>
+        <dialog id="login-register"
+            class="js-vv-modal mx-auto w-[470px] max-w-[90%] border-none bg-transparent p-0 backdrop:bg-gray-900/90">
+            <div class="pt-[22px]">
+                <div class="bg-white dark:bg-gray-700 shadow-3xl overflow-y-auto">
+                    <div
+                        class="relative overflow-hidden isolate flex h-28 items-center bg-primary px-6 md:px-10 lg:h-[140px]">
+                        <div class="relative z-[4] text-white sm:ml-[56%]">
+                            <h4
+                                class="text-2xl leading-none font-bold mb-1 lg:text-3xl xl:text-[38px] xl:leading-[0.74em] tracking-tighter uppercase">
+                                <span>Login &</span>
+                                <span class="block xl:leading-none xl:text-[32px]">Register</span>
+                            </h4>
+                            <div class="font-bold leading-none uppercase tracking-tighter">I’m glad to see you here!
                             </div>
-
-                            <svg class="absolute left-0 top-0 w-full h-full -z-20" fill="none"
-                                viewBox="0 0 470 140">
-                                <defs>
-                                    <pattern id="dotted-pattern" x="0" y="0" width="26" height="26"
-                                        patternUnits="userSpaceOnUse">
-                                        <rect x="0" y="0" width="3" height="3" class="text-white/30"
-                                            fill="currentColor" />
-                                    </pattern>
-                                </defs>
-                                <rect width="470" height="140" fill="url(#dotted-pattern)" />
-                            </svg>
-
-                            <img class="hidden sm:block absolute left-0 top-0 h-full z-[5] object-cover aspect-[251/140]"
-                                src="assets/img/main/samples/modal-header-hero.png" alt="">
                         </div>
-
-                        <div>
-                            <div class="tabs">
-
-                                <nav class="tabs__header overflow-hidden">
-                                    <ul class="grid grid-cols-2 gap-x-[1px] dark:bg-gray-500/20">
-                                        <li class="tabs__header-item is-active group">
-                                            <a href="#"
-                                                class="flex justify-center uppercase tracking-tighter border-b bg-gray-50 dark:bg-gray-800 group-[.is-active]:bg-white border-gray-500/20 py-4 text-center font-bold text-gray-600 transition-colors hover:text-gray-900 dark:hover:text-white group-[.is-active]:text-primary dark:group-[.is-active]:border-gray-700 group-[.is-active]:border-white dark:group-[.is-active]:bg-gray-700 dark:group-[.is-active]:hover:text-primary">Login</a>
-                                        </li>
-                                        <li class="tabs__header-item group flex-1">
-                                            <a href="#"
-                                                class="flex justify-center uppercase tracking-tighter border-b bg-gray-50 dark:bg-gray-800 group-[.is-active]:bg-white border-gray-500/20 py-4 text-center font-bold text-gray-600 transition-colors hover:text-gray-900 dark:hover:text-white group-[.is-active]:text-primary dark:group-[.is-active]:border-gray-700 group-[.is-active]:border-white dark:border-gray-500/20 dark:group-[.is-active]:bg-gray-700 dark:group-[.is-active]:hover:text-primary">Register</a>
-                                        </li>
-                                    </ul>
-                                </nav>
-
-                                <div class="tabs__content py-6 px-6 lg:px-10 lg:py-9">
-
-                                    <div class="tabs__content-item">
-
-                                        <form class="flex flex-col gap-y-6 lg:gap-y-8" action="#">
-                                            <div>
-                                                <label
-                                                    class="block text-sm font-bold uppercase tracking-tight text-gray-900 dark:text-white [&:not(:empty)]:mb-2.5"
-                                                    for="login-user-email">Your Email
-                                                </label>
-                                                <input
-                                                    class="group-[.is-success]:bg-input-success-dark group-[.is-error]:border-danger group-[.is-error]:bg-input-invalid group-[.is-error]:text-danger group-[.is-success]:pr-16 group-[.is-invalid]:pr-16 px-4 py-2 border-base bg-white bg-[length:18px_18px,_38px_38px] bg-[position:right_16px_center,_right_6px_center] bg-no-repeat font-medium leading-8 tracking-tight text-gray-900 transition-all duration-150 placeholder:font-normal placeholder:text-gray-500/60 focus:border-accent focus:bg-white focus:text-gray-900 focus:outline-0 focus:ring-0 dark:border-gray-600 dark:group-[.is-success]:bg-input-success dark:bg-gray-800 dark:text-white dark:placeholder:text-gray-500/80 dark:focus:border-accent dark:focus:bg-gray-900 w-full"
-                                                    type="email" name="login-user-email" id="login-user-email"
-                                                    value="" placeholder="">
-                                                <p class="group-[.is-error]:block mt-2 hidden text-xs text-danger">
-
-                                                </p>
-                                            </div>
-                                            <div>
-                                                <label
-                                                    class="block text-sm font-bold uppercase tracking-tight text-gray-900 dark:text-white [&:not(:empty)]:mb-2.5"
-                                                    for="login-user-password">Your Password
-                                                </label>
-                                                <input
-                                                    class="group-[.is-success]:bg-input-success-dark group-[.is-error]:border-danger group-[.is-error]:bg-input-invalid group-[.is-error]:text-danger group-[.is-success]:pr-16 group-[.is-invalid]:pr-16 px-4 py-2 border-base bg-white bg-[length:18px_18px,_38px_38px] bg-[position:right_16px_center,_right_6px_center] bg-no-repeat font-medium leading-8 tracking-tight text-gray-900 transition-all duration-150 placeholder:font-normal placeholder:text-gray-500/60 focus:border-accent focus:bg-white focus:text-gray-900 focus:outline-0 focus:ring-0 dark:border-gray-600 dark:group-[.is-success]:bg-input-success dark:bg-gray-800 dark:text-white dark:placeholder:text-gray-500/80 dark:focus:border-accent dark:focus:bg-gray-900 w-full"
-                                                    type="password" name="login-user-password"
-                                                    id="login-user-password" value="" placeholder="">
-                                                <p class="group-[.is-error]:block mt-2 hidden text-xs text-danger">
-
-                                                </p>
-                                            </div>
-                                            <div class="flex justify-between flex-wrap gap-y-4">
-                                                <div>
-                                                    <label class="flex items-center gap-x-3 hover:cursor-pointer"
-                                                        for="remember-me">
-                                                        <input name="remember-me" id="remember-me" type="checkbox"
-                                                            class="h-4 w-4 border-gray-600 bg-white checked:border-primary checked:bg-white checked:text-primary checked:hover:border-primary checked:hover:bg-white dark:border-gray-600 dark:bg-gray-900 dark:checked:border-primary dark:checked:hover:border-primary dark:checked:hover:bg-gray-900">
-                                                        <span
-                                                            class="text-xs font-bold uppercase text-gray-900 dark:text-white">
-                                                            Remember Me
-                                                        </span>
-
-                                                    </label>
-                                                </div>
-                                                <a href="#"
-                                                    class="text-xs font-bold uppercase text-primary dark:text-white hover:text-primary dark:hover:text-primary transition-colors">Forgot
-                                                    Password?</a>
-                                            </div>
-                                            <div class="mt-2">
-                                                <button type="submit"
-                                                    class="inline-flex text-center font-bold leading-none transition-colors uppercase justify-center gap-x-3 py-4 px-4 md:py-[18px] lg:px-8 text-sm text-white bg-primary hover:bg-primary/90 w-full">
-                                                    Login to your account
-
-                                                </button>
-                                            </div>
-                                        </form>
-
-                                        <div class="pt-4.5">
-                                            <div
-                                                class="text-center uppercase font-bold text-primary mb-6 text-xs dark:text-white">
-                                                or login with your social account</div>
-                                            <div class="flex gap-4">
-                                                <a href="#"
-                                                    class="inline-flex text-center font-bold leading-none transition-colors uppercase justify-center gap-x-3 py-4 px-4 md:py-[18px] lg:px-8 text-sm text-white bg-social-facebook hover:bg-social-facebook/90 flex-1">
-                                                    <svg class="h-[14px] w-[14px]" fill="currentColor">
-                                                        <use xlink:href="assets/img/main/social-icons.svg#facebook"></use>
-                                                    </svg>
-                                                    Login
-
-                                                </a>
-                                                <a href="#"
-                                                    class="inline-flex text-center font-bold leading-none transition-colors uppercase justify-center gap-x-3 py-4 px-4 md:py-[18px] lg:px-8 text-sm text-white bg-social-twitter hover:bg-social-twitter/90 flex-1">
-                                                    <svg class="h-[14px] w-[14px]" fill="currentColor">
-                                                        <use xlink:href="assets/img/main/social-icons.svg#twitter"></use>
-                                                    </svg>
-                                                    Login
-
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="tabs__content-item">
-
-                                        <form class="flex flex-col gap-y-6 lg:gap-y-8" action="#">
-                                            <div class="group">
-                                                <label
-                                                    class="block text-sm font-bold uppercase tracking-tight text-gray-900 dark:text-white [&:not(:empty)]:mb-2.5"
-                                                    for="register-user-email">Your Email
-                                                </label>
-                                                <input
-                                                    class="group-[.is-success]:bg-input-success-dark group-[.is-error]:border-danger group-[.is-error]:bg-input-invalid group-[.is-error]:text-danger group-[.is-success]:pr-16 group-[.is-invalid]:pr-16 px-4 py-2 border-base bg-white bg-[length:18px_18px,_38px_38px] bg-[position:right_16px_center,_right_6px_center] bg-no-repeat font-medium leading-8 tracking-tight text-gray-900 transition-all duration-150 placeholder:font-normal placeholder:text-gray-500/60 focus:border-accent focus:bg-white focus:text-gray-900 focus:outline-0 focus:ring-0 dark:border-gray-600 dark:group-[.is-success]:bg-input-success dark:bg-gray-800 dark:text-white dark:placeholder:text-gray-500/80 dark:focus:border-accent dark:focus:bg-gray-900 w-full"
-                                                    type="email" name="register-user-email"
-                                                    id="register-user-email" value="jspigel@yourmail.com"
-                                                    placeholder="">
-                                                <p class="group-[.is-error]:block mt-2 hidden text-xs text-danger">
-
-                                                </p>
-                                            </div>
-                                            <div class="group">
-                                                <label
-                                                    class="block text-sm font-bold uppercase tracking-tight text-gray-900 dark:text-white [&:not(:empty)]:mb-2.5"
-                                                    for="register-user-password">Your Password
-                                                </label>
-                                                <input
-                                                    class="group-[.is-success]:bg-input-success-dark group-[.is-error]:border-danger group-[.is-error]:bg-input-invalid group-[.is-error]:text-danger group-[.is-success]:pr-16 group-[.is-invalid]:pr-16 px-4 py-2 border-base bg-white bg-[length:18px_18px,_38px_38px] bg-[position:right_16px_center,_right_6px_center] bg-no-repeat font-medium leading-8 tracking-tight text-gray-900 transition-all duration-150 placeholder:font-normal placeholder:text-gray-500/60 focus:border-accent focus:bg-white focus:text-gray-900 focus:outline-0 focus:ring-0 dark:border-gray-600 dark:group-[.is-success]:bg-input-success dark:bg-gray-800 dark:text-white dark:placeholder:text-gray-500/80 dark:focus:border-accent dark:focus:bg-gray-900 w-full"
-                                                    type="password" name="register-user-password"
-                                                    id="register-user-password" value="qwertyqw" placeholder="">
-                                                <p class="group-[.is-error]:block mt-2 hidden text-xs text-danger">
-                                                    Password need to have at least one number
-                                                </p>
-                                            </div>
-                                            <div>
-                                                <label
-                                                    class="block text-sm font-bold uppercase tracking-tight text-gray-900 dark:text-white [&:not(:empty)]:mb-2.5"
-                                                    for="user-password-repeat">Repeat Password
-                                                </label>
-                                                <input
-                                                    class="group-[.is-success]:bg-input-success-dark group-[.is-error]:border-danger group-[.is-error]:bg-input-invalid group-[.is-error]:text-danger group-[.is-success]:pr-16 group-[.is-invalid]:pr-16 px-4 py-2 border-base bg-white bg-[length:18px_18px,_38px_38px] bg-[position:right_16px_center,_right_6px_center] bg-no-repeat font-medium leading-8 tracking-tight text-gray-900 transition-all duration-150 placeholder:font-normal placeholder:text-gray-500/60 focus:border-accent focus:bg-white focus:text-gray-900 focus:outline-0 focus:ring-0 dark:border-gray-600 dark:group-[.is-success]:bg-input-success dark:bg-gray-800 dark:text-white dark:placeholder:text-gray-500/80 dark:focus:border-accent dark:focus:bg-gray-900 w-full"
-                                                    type="password" name="user-password-repeat"
-                                                    id="user-password-repeat" value="" placeholder="">
-                                                <p class="group-[.is-error]:block mt-2 hidden text-xs text-danger">
-
-                                                </p>
-                                            </div>
-                                            <div class="mt-2">
-                                                <button type="submit"
-                                                    class="inline-flex text-center font-bold leading-none transition-colors uppercase justify-center gap-x-3 py-4 px-4 md:py-[18px] lg:px-8 text-sm text-white bg-accent hover:bg-accent/90 w-full">
-                                                    Create your account
-
-                                                </button>
-                                            </div>
-                                            <div class="text-sm leading-loose text-gray text-center">
-                                                <p>You’ll receive a confirmation email in your inbox with a link so you
-                                                    can activate your account. If you have any problems, <a
-                                                        class="text-primary hover:text-primary dark:hover:text-white transition-colors"
-                                                        href="_main-contact.html">contact us</a>!</p>
-                                            </div>
-                                        </form>
-
-                                    </div>
-
+                        <svg class="absolute left-0 top-0 w-full h-full -z-20" fill="none" viewBox="0 0 470 140">
+                            <defs>
+                                <pattern id="dotted-pattern" x="0" y="0" width="26" height="26"
+                                    patternUnits="userSpaceOnUse">
+                                    <rect x="0" y="0" width="3" height="3" class="text-white/30"
+                                        fill="currentColor" />
+                                </pattern>
+                            </defs>
+                            <rect width="470" height="140" fill="url(#dotted-pattern)" />
+                        </svg>
+                        <img class="hidden sm:block absolute left-0 top-0 h-full z-[5] object-cover aspect-[251/140]"
+                            src="assets/img/main/samples/modal-header-hero.png" alt="">
+                    </div>
+                    <div>
+                        <div class="tabs">
+                            <nav class="tabs__header overflow-hidden">
+                                <ul class="grid grid-cols-2 gap-x-[1px] dark:bg-gray-500/20">
+                                    <li class="tabs__header-item is-active group">
+                                        <a href="#"
+                                            class="flex justify-center uppercase tracking-tighter border-b bg-gray-50 dark:bg-gray-800 group-[.is-active]:bg-white border-gray-500/20 py-4 text-center font-bold text-gray-600 transition-colors hover:text-gray-900 dark:hover:text-white group-[.is-active]:text-primary dark:group-[.is-active]:border-gray-700 group-[.is-active]:border-white dark:group-[.is-active]:bg-gray-700 dark:group-[.is-active]:hover:text-primary">Login</a>
+                                    </li>
+                                    <li class="tabs__header-item group flex-1">
+                                        <a href="#"
+                                            class="flex justify-center uppercase tracking-tighter border-b bg-gray-50 dark:bg-gray-800 group-[.is-active]:bg-white border-gray-500/20 py-4 text-center font-bold text-gray-600 transition-colors hover:text-gray-900 dark:hover:text-white group-[.is-active]:text-primary dark:group-[.is-active]:border-gray-700 group-[.is-active]:border-white dark:border-gray-500/20 dark:group-[.is-active]:bg-gray-700 dark:group-[.is-active]:hover:text-primary">Register</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <div class="tabs__content py-6 px-6 lg:px-10 lg:py-9">
+                                <div class="tabs__content-item">
+                                    <x-login-form />
+                                </div>
+                                <div class="tabs__content-item hidden">
+                                    <x-register-form />
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-            </dialog>
             </div>
+        </dialog>
 
-            <!-- Scripts -->
-            <!-- Vendors JS -->
-            <script src="{{ asset('assets/vendors/common/glightbox/js/glightbox.min.js') }}"></script>
-            <script src="{{ asset('assets/vendors/common/swiper/js/swiper-bundle.min.js') }}"></script>
+        </div>
 
-            <!-- Template JS -->
-            <script src="{{ asset('assets/js/main/common.js') }}"></script>
-            <script src="{{ asset('assets/js/main/init.js') }}"></script>
+        <!-- Scripts -->
+        <!-- Vendors JS -->
+        <script src="{{ asset('assets/vendors/common/glightbox/js/glightbox.min.js') }}"></script>
+        <script src="{{ asset('assets/vendors/common/swiper/js/swiper-bundle.min.js') }}"></script>
+
+        <!-- Template JS -->
+        <script src="{{ asset('assets/js/main/common.js') }}"></script>
+        <script src="{{ asset('assets/js/main/init.js') }}"></script>
     </body>
 
 </html>

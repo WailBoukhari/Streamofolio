@@ -133,13 +133,6 @@
                                         </a>
                                     </li>
                                     <li class="px-5.5">
-                                        <button
-                                            class="js-vv-modal__open-btn-login-register flex items-center justify-between py-1.5 transition-colors text-gray-900 hover:text-primary dark:text-white dark:hover:text-primary uppercase"
-                                            data-id="login-register">
-                                            Login/Register
-                                        </button>
-                                    </li>
-                                    <li class="px-5.5">
                                         <a class="flex items-center justify-between py-1.5 transition-colors text-gray-900 hover:text-primary dark:text-white dark:hover:text-primary"
                                             href="{{ route('account') }}">
                                             Account
@@ -196,6 +189,8 @@
                             </label>
                         </div>
 
+
+                        @if (Auth::check())
                         <div
                             class="relative [&>.sub-menu]:lg:hover:visible [&>.sub-menu]:hover:animate-popper-pop-in [&>.sub-menu]:lg:hover:opacity-100">
                             <a class="block py-4 px-2 xl:px-3" href="{{ route('account') }}">
@@ -214,12 +209,6 @@
                                 </li>
                                 <li class="px-5.5">
                                     <a class="flex flex-row-reverse items-center justify-between py-1.5 text-gray-900 dark:text-white transition-colors hover:text-primary dark:hover:text-primary"
-                                        href="{{ route('account-billing') }}">
-                                        Billing Details
-                                    </a>
-                                </li>
-                                <li class="px-5.5">
-                                    <a class="flex flex-row-reverse items-center justify-between py-1.5 text-gray-900 dark:text-white transition-colors hover:text-primary dark:hover:text-primary"
                                         href="{{ route('account-shipping') }}">
                                         Shipping Details
                                     </a>
@@ -232,14 +221,33 @@
                                 </li>
                                 <li class="px-5.5">
                                     <a class="flex flex-row-reverse items-center justify-between py-1.5 text-gray-900 dark:text-white transition-colors hover:text-primary dark:hover:text-primary"
-                                        href="#">
+                                        href="{{ route('logout') }}">
                                         Logout
                                     </a>
                                 </li>
                             </ul>
-
                         </div>
+                        @else
+                                <div
+                            class="relative [&>.sub-menu]:lg:hover:visible [&>.sub-menu]:hover:animate-popper-pop-in [&>.sub-menu]:lg:hover:opacity-100">
+                            <a class="block py-4 px-2 xl:px-3" href="{{ route('account') }}">
+                                <svg role="img" class="h-6 w-6 fill-gray-900 dark:fill-white">
+                                    <use xlink:href="assets/img/main/sprite.svg#user"></use>
+                                </svg>
+                            </a>
 
+                            <ul
+                                class="sub-menu invisible absolute right-full z-20 -mr-9 flex w-40 origin-top-right flex-col bg-white dark:bg-gray-700 py-3 text-sm font-bold opacity-0 shadow-2xl transition-all uppercase">
+                                <li class="px-5.5">
+                                                                       <button
+                                            class="js-vv-modal__open-btn-login-register flex items-center justify-between py-1.5 transition-colors text-gray-900 hover:text-primary dark:text-white dark:hover:text-primary uppercase"
+                                            data-id="login-register">
+                                            Login/Register
+                                        </button>
+                                </li>
+                            </ul>
+                        </div>
+                        @endif
                         <div
                             class="relative [&>.sub-menu]:lg:hover:visible [&>.sub-menu]:hover:animate-popper-pop-in [&>.sub-menu]:lg:hover:opacity-100 lg:-mr-2">
                             <a class="relative block py-4 px-1 sm:px-2" href="{{ route('cart') }}">

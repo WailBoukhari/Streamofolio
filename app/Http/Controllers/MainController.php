@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Admin;
 use App\Models\Affiliate;
+use App\Models\Bio;
 use App\Models\Gear;
 use App\Models\Partner;
 use App\Models\Product;
@@ -21,8 +22,10 @@ class MainController extends Controller
         $user = User::first();
         $admin = Admin::first();
         $partners = Partner::all();
+        $bio = Bio::first();
+
         // Pass the gear items to the view
-        return view('User.home', compact('gearItems', 'user', 'admin', 'partners'));
+        return view('User.home', compact('gearItems', 'user', 'admin', 'partners','bio'));
     }
 
     public function affiliates()
@@ -85,10 +88,6 @@ class MainController extends Controller
         )
         );
 
-    }
-    public function accountBilling()
-    {
-        return view('User.account-billing');
     }
 
     public function accountInfo()

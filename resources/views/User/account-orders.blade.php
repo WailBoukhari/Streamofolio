@@ -8,9 +8,7 @@
               <li>
                 <a class="transition-all text-gray-900 hover:text-primary dark:text-white dark:hover:text-primary" href="_str2-account-info.html">Personal Info</a>
               </li>
-              <li>
-                <a class="transition-all text-gray-900 hover:text-primary dark:text-white dark:hover:text-primary" href="_str2-account-billing.html">Billing Details</a>
-              </li>
+
               <li>
                 <a class="transition-all text-gray-900 hover:text-primary dark:text-white dark:hover:text-primary" href="_str2-account-shipping.html">Shipping Details</a>
               </li>

@@ -1,5 +1,5 @@
 <x-main>
-
+   {{-- {{ dd(Auth::user());}} --}}
     <div class="relative h-[360px] w-full overflow-hidden sm:h-[420px] md:h-[440px] lg:h-[540px] xl:h-[640px]">
 
         <div class="relative z-10 mx-auto max-w-[1440px] px-5">
@@ -96,14 +96,14 @@
                     <div class="flex flex-col">
                         <div class="text-base font-medium uppercase tracking-tight text-primary md:text-lg lg:text-xl xl:text-1.5xl">About Me</div>
                         <h2 class="font-bold uppercase leading-none tracking-tighter text-gray-900 dark:text-white text-2.5xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6.5xl xl:leading-[0.85em]">
-                            Hi! I'm {{ $user->name ?? '' }}<br>The <span class="text-primary">Retro Streamer</span>
+                           {{ $bio->title ?? '' }}
                         </h2>
                     </div>
 
                 </div>
 
                 <div class="lg:max-w-sm xl:max-w-[402px] xl:-mt-4">
-                    <p>My name is {{ $user->name ?? '' }}, but lots of you may know me as {{  $user->admin->aliase ?? '' }}! I started streaming in 2016 and never stopped since then. I mostly play retro games from the 90’s and 00’s to bring back that nostalgic feel!</p>
+                    <p> {{ $bio->content ?? '' }}</p>
 
                     <div class="flex justify-end pb-4 pt-8 lg:pt-12">
                         <div class="font-decorative dark:text-white text-lg lg:text-1.5xl leading-tight -rotate-6">
