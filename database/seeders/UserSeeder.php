@@ -17,7 +17,7 @@ class UserSeeder extends Seeder
         // Create a user
         $user = User::create([
             'image' => 'assets\img\main\samples\about-me.jpg',
-            'name' => 'John Doe',
+            'username' => 'John Doe',
             'email' => 'john@example.com',
             'password' => bcrypt('password'),
         ]);

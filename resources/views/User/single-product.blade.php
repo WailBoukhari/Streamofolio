@@ -187,7 +187,7 @@
                                                 </div>
                                                 <div
                                                     class="text-base leading-tight uppercase font-bold tracking-tighter text-gray-900 dark:text-white">
-                                                    by <strong class="text-primary">{{ $review->name }}</strong> <time
+                                                    by <strong class="text-primary">{{ $review->username }}</strong> <time
                                                         class=""
                                                         datetime="{{ $review->created_at }}">{{ $review->created_at->diffForHumans() }}</time>
                                                 </div>

@@ -16,8 +16,9 @@ class RegisterController extends Controller
     public function store(Request $request)
     {
         $messages = [
-            'name.required' => 'The name field is required.',
-            'name.max' => 'The name may not be greater than :max characters.',
+            'username.required' => 'The username field is required.',
+            'username.max' => 'The username may not be greater than :max characters.',
+            'username.unique' => 'The username has already been taken.',
             'email.required' => 'The email field is required.',
             'email.email' => 'The email must be a valid email address.',
             'email.max' => 'The email may not be greater than :max characters.',
@@ -28,13 +29,13 @@ class RegisterController extends Controller
         ];
 
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
+            'username' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ], $messages);
 
         $user = User::create([
-            'name' => $request->name,
+            'username' => $request->username,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'email_verified_at' => null,

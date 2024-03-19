@@ -15,7 +15,7 @@
         <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('assets/img/main/favicons/favicon-120.png') }}">
         <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('assets/img/main/favicons/favicon-152.png') }}">
         <!-- Mobile Specific Metas -->
-        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
         <!-- Google Web Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -225,7 +225,7 @@
                             <rect width="470" height="140" fill="url(#dotted-pattern)" />
                         </svg>
                         <img class="hidden sm:block absolute left-0 top-0 h-full z-[5] object-cover aspect-[251/140]"
-                            src="assets/img/main/samples/modal-header-hero.png" alt="">
+                            src="{{ asset('assets/img/main/samples/modal-header-hero.png') }}" alt="">
                     </div>
                     <div>
                         <div class="tabs">
@@ -245,7 +245,7 @@
                                 <div class="tabs__content-item">
                                     <x-login-form />
                                 </div>
-                                <div class="tabs__content-item hidden">
+                                <div class="tabs__content-item">
                                     <x-register-form />
                                 </div>
                             </div>
@@ -254,7 +254,6 @@
                 </div>
             </div>
         </dialog>
-
         </div>
 
         <!-- Scripts -->

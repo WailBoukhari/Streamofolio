@@ -25,8 +25,6 @@ class ReviewController extends Controller
         $review->title = $validatedData['review-title'];
         $review->rating = $validatedData['review-rating'];
         $review->comment = $validatedData['review-comment'];
-
-      
         $review->user_id = $user->id;
 
         $review->save();

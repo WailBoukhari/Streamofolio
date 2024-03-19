@@ -5,10 +5,12 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ShippingController;
 use Illuminate\Support\Facades\Route;
+
 
 Route::get('/', [MainController::class, 'home'])->name('home');
 Route::get('/affiliates', [MainController::class, 'affiliates'])->name('affiliates');
@@ -28,6 +30,8 @@ Route::middleware(['auth.verify' ,'client'])->group(function () {
     Route::post('/store-review', [ReviewController::class, 'store'])->name('store.review');
     Route::get('/cart', [MainController::class, 'cart'])->name('cart');
     Route::get('/checkout', [MainController::class, 'checkout'])->name('checkout');
+    Route::post('/profile/update', [ClientController::class, 'updateProfile'])->name('profile.update');
+
 });
 
 
@@ -52,10 +56,10 @@ Route::get('/reset-password/{token}', [ResetPasswordController::class, 'showRese
 Route::post('/reset-password', [ResetPasswordController::class, 'reset'])->name('password.update');
 
 // Email verification routes
-Route::get('/email/verify', [EmailVerificationController::class, 'show'])->middleware(['auth'])->name('verification.notice');
-Route::get('/email/verify/{id}/{hash}', [EmailVerificationController::class, 'verify'])
+Route::get('/email_verify', [EmailVerificationController::class, 'show'])->middleware(['auth'])->name('verification.notice');
+Route::get('/email_verify/{id}/{hash}', [EmailVerificationController::class, 'verify'])
     ->middleware(['auth', 'signed', 'throttle:6,1'])
     ->name('verification.verify');
-Route::post('/email/verification-notification', [EmailVerificationController::class, 'sendVerificationEmail'])
+Route::post('/verification-notification', [EmailVerificationController::class, 'sendVerificationEmail'])
     ->middleware(['auth', 'throttle:6,1'])
     ->name('verification.send');
