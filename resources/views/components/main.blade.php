@@ -260,7 +260,6 @@
         <!-- Vendors JS -->
         <script src="{{ asset('assets/vendors/common/glightbox/js/glightbox.min.js') }}"></script>
         <script src="{{ asset('assets/vendors/common/swiper/js/swiper-bundle.min.js') }}"></script>
-        
 
         <!-- Template JS -->
         <script src="{{ asset('assets/js/main/common.js') }}"></script>

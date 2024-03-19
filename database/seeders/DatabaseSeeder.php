@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
         $this->call(PartnerSeeder::class);
         $this->call(ProductsTableSeeder::class);
         $this->call(GearsTableSeeder::class);
+        $this->call(CouponSeeder::class);
 
     }
 }

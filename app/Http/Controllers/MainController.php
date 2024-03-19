@@ -13,6 +13,7 @@ use App\Models\Review;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class MainController extends Controller
 {
@@ -26,7 +27,7 @@ class MainController extends Controller
         $bio = Bio::first();
 
         // Pass the gear items to the view
-        return view('User.home', compact('gearItems', 'user', 'admin', 'partners','bio'));
+        return view('User.home', compact('gearItems', 'user', 'admin', 'partners', 'bio'));
     }
 
     public function affiliates()
@@ -37,8 +38,27 @@ class MainController extends Controller
 
     public function cart()
     {
-        return view('User.cart');
+        $cartItems = Session::get('cart');
+       if (empty ($cartItems)) {
+            $cartTotal = 0;
+            $promoDiscount = 0;
+            $totalAfterDiscount = 0;
+            $shippingCost = 0;
+            $totalDiscount = 0;
+        } else {
+            $cartTotal = 0;
+            foreach ($cartItems as $item) {
+                $cartTotal += $item['price'] * $item['quantity'];
+            }
+
+            $shippingCost = 5.00;
+
+            $promoDiscount = Session::get('coupon_discount', 0);
+            $totalAfterDiscount = Session::get('total_after_discount', $cartTotal + $shippingCost);
+        }
+        return view('User.cart', compact('cartItems', 'cartTotal', 'shippingCost', 'promoDiscount', 'totalAfterDiscount'));
     }
+
 
     public function contact()
     {
@@ -66,8 +86,8 @@ class MainController extends Controller
     {
         $product = Product::findOrFail($id);
         $reviews = Review::all();
-      
-       
+
+
         return view('User.single-product', compact('product', 'reviews'));
     }
 
@@ -82,11 +102,13 @@ class MainController extends Controller
             $twitchUsername = $admin->twitch_username;
             $aliase = $admin->aliase;
         }
-        return view('User.stream', compact(
-            'schedule',
-            'twitchUsername',
-            'aliase'
-        )
+        return view(
+            'User.stream',
+            compact(
+                'schedule',
+                'twitchUsername',
+                'aliase'
+            )
         );
 
     }
@@ -104,13 +126,13 @@ class MainController extends Controller
     public function accountShipping()
     {
         $shippingDetail = Auth::user()->shipping;
-        
+
         return view('User.account-shipping', compact('shippingDetail'));
     }
 
     public function account()
     {
-        
+
         return view('User.account');
     }
 

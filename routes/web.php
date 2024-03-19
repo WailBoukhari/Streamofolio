@@ -7,10 +7,12 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\CouponController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ShippingController;
 use Illuminate\Support\Facades\Route;
+
 
 
 
@@ -36,7 +38,8 @@ Route::middleware(['auth.verify', 'client'])->group(function () {
     Route::post('/add-to-cart', [CartController::class, 'addToCart'])->name('cart.add');
     Route::post('/cart/clear', [CartController::class, 'clear'])->name('cart.clear');
     Route::delete('/cart/{key}', [CartController::class, 'delete'])->name('cart.delete');
-
+    Route::put('/cart/{key}', [CartController::class, 'update'])->name('cart.update');
+    Route::post('/redeem-coupon', [CartController::class, 'applyCoupon'])->name('redeem.coupon');
 });
 
 

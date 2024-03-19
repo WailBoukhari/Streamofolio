@@ -167,4 +167,28 @@ document.addEventListener('DOMContentLoaded', function () {
     return password.length >= 6;
   }
 });
+// JavaScript for Handling Quantity Changes and AJAX Cart Update
+document.addEventListener('DOMContentLoaded', function () {
+  const cartItemsContainer = document.getElementById('cart-items');
+  const cartTotalElement = document.getElementById('cart-total');
+  const updateCartButton = document.getElementById('update-cart-btn');
+
+  // Event listener for quantity buttons
+  cartItemsContainer.addEventListener('click', function (event) {
+    if (event.target && event.target.matches('.quantity-btn')) {
+      const action = event.target.dataset.action;
+      const quantityElement = event.target.parentElement.querySelector('.quantity');
+      let newQuantity = parseInt(quantityElement.textContent);
+
+      if (action === 'increase') {
+        newQuantity++;
+      } else if (action === 'decrease' && newQuantity > 1) {
+        newQuantity--;
+      }
+
+      quantityElement.textContent = newQuantity;
+    }
+  });
+
+});
 

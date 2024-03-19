@@ -337,11 +337,15 @@
                                                     </div>
                                                     <!-- Product Body / End -->
                                                     <!-- Remove Product -->
-                    <form action="{{ route('cart.delete', $key) }}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn-delete">Delete</button>
-                    </form>
+                                                                                       <form action="{{ route('cart.delete', $key) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button class="group inline-flex h-5 w-5 items-center justify-center">
+                                                    <svg role="img" class="h-2 w-2 fill-gray-900 transition-colors group-hover:fill-primary dark:fill-white dark:group-hover:fill-primary">
+                                                        <use xlink:href="assets/img/main/sprite.svg#close"></use>
+                                                    </svg>
+                                                </button>
+                                            </form> 
                                                     <!-- Remove Product / End -->
 
                                                 </li>
