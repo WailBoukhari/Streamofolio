@@ -12,25 +12,31 @@ class LoginController extends Controller
     {
         return view('Auth.login-request');
     }
-    public function store(Request $request)
-    {
+public function store(Request $request)
+{
+        $loginMessages = [
+            'loginEmail.required' => 'The email field is required.',
+            'loginEmail.email' => 'The email must be a valid email address.',
+            'loginPassword.required' => 'The password field is required.',
+        ];
+
         $request->validate([
             'email' => 'required|email',
             'password' => 'required',
-        ]);
+        ], $loginMessages);
 
-        $credentials = $request->only('email', 'password');
+    $credentials = $request->only('email', 'password');
 
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
+    if (Auth::attempt($credentials)) {
+        $request->session()->regenerate();
 
-            return redirect()->intended('/dashboard');
-        }
-
-        return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ])->withInput($request->only('email'));
+        return redirect()->intended('/dashboard');
     }
+
+    return back()->withErrors([
+        'email' => 'The provided credentials do not match our records.',
+    ])->withInput($request->only('email'));
+}
 
     public function logout(Request $request)
     {

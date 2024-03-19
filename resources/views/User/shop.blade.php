@@ -36,9 +36,14 @@
                             </div>
                             <div
                                 class="flex absolute justify-center left-0 right-0 top-1/2 -translate-y-1/2 scale-90 [@media(hover:hover)]:opacity-0 [@media(hover:hover)]:transition-all [@media(hover:hover)]:duration-300 [@media(hover:hover)]:group-hover:scale-100 [@media(hover:hover)]:group-hover:opacity-100">
-                                <a href="{{ route('single-product', $product->id) }}"
-                                    class="inline-flex text-center font-bold leading-none transition-colors uppercase justify-center gap-x-3 py-4 px-4 md:py-[18px] lg:px-8 text-sm text-white bg-primary hover:bg-primary/90">+
-                                    Add To Cart</a>
+                                <form action="{{ route('cart.add') }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                    <button type="submit"
+                                        class="inline-flex text-center font-bold leading-none transition-colors uppercase justify-center gap-x-3 py-4 px-4 md:py-[18px] lg:px-8 text-sm text-white bg-primary hover:bg-primary/90 basis-full md:basis-1/2 lg:basis-2/5">
+                                        + Add to cart
+                                    </button>
+                                </form>
                             </div>
                         </figure>
                         <div class="flex flex-col items-center p-5 md:p-7 xl:p-9">
@@ -56,58 +61,59 @@
 
             </div>
 
-<nav class="pt-10 md:pt-14 lg:pt-24">
-    <ul class="flex flex-wrap items-center justify-center gap-x-1.5 md:gap-x-2 lg:gap-x-4">
-        <!-- Previous Page Link -->
-        @if ($products->onFirstPage())
-            <li class="flex items-center">
-                <span class="inline-flex justify-center items-center w-8 lg:w-12.5 aspect-square bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white opacity-40 pointer-events-none">
-                    <svg class="w-2.5 aspect-square rotate-180" fill="currentColor">
-                        <use xlink:href="assets/img/main/sprite.svg#arrow-right"></use>
-                    </svg>
-                </span>
-            </li>
-        @else
-            <li class="flex items-center">
-                <a href="{{ $products->previousPageUrl() }}"
-                    class="inline-flex justify-center items-center w-8 lg:w-12.5 aspect-square bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-primary transition-colors hover:text-gray-900 dark:hover:text-gray-900">
-                    <svg class="w-2.5 aspect-square rotate-180" fill="currentColor">
-                        <use xlink:href="assets/img/main/sprite.svg#arrow-right"></use>
-                    </svg>
-                </a>
-            </li>
-        @endif
+            <nav class="pt-10 md:pt-14 lg:pt-24">
+                <ul class="flex flex-wrap items-center justify-center gap-x-1.5 md:gap-x-2 lg:gap-x-4">
+                    <!-- Previous Page Link -->
+                    @if ($products->onFirstPage())
+                        <li class="flex items-center">
+                            <span
+                                class="inline-flex justify-center items-center w-8 lg:w-12.5 aspect-square bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white opacity-40 pointer-events-none">
+                                <svg class="w-2.5 aspect-square rotate-180" fill="currentColor">
+                                    <use xlink:href="assets/img/main/sprite.svg#arrow-right"></use>
+                                </svg>
+                            </span>
+                        </li>
+                    @else
+                        <li class="flex items-center">
+                            <a href="{{ $products->previousPageUrl() }}"
+                                class="inline-flex justify-center items-center w-8 lg:w-12.5 aspect-square bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-primary transition-colors hover:text-gray-900 dark:hover:text-gray-900">
+                                <svg class="w-2.5 aspect-square rotate-180" fill="currentColor">
+                                    <use xlink:href="assets/img/main/sprite.svg#arrow-right"></use>
+                                </svg>
+                            </a>
+                        </li>
+                    @endif
 
-        <!-- Page Number Links -->
-        @foreach ($products->getUrlRange(1, $products->lastPage()) as $page => $url)
-            <li>
-                <a href="{{ $url }}"
-                    class="inline-flex justify-center items-center w-8 lg:w-12.5 aspect-square font-bold transition-colors bg-gray-{{ $page == $products->currentPage() ? '50' : '100' }} dark:bg-gray-{{ $page == $products->currentPage() ? '700' : '800' }} hover:bg-primary dark:hover:bg-primary text-gray-{{ $page == $products->currentPage() ? '900' : '700' }} dark:text-white hover:text-white dark:hover:text-white">{{ $page }}</a>
-            </li>
-        @endforeach
+                    <!-- Page Number Links -->
+                    @foreach ($products->getUrlRange(1, $products->lastPage()) as $page => $url)
+                        <li>
+                            <a href="{{ $url }}"
+                                class="inline-flex justify-center items-center w-8 lg:w-12.5 aspect-square font-bold transition-colors bg-gray-{{ $page == $products->currentPage() ? '50' : '100' }} dark:bg-gray-{{ $page == $products->currentPage() ? '700' : '800' }} hover:bg-primary dark:hover:bg-primary text-gray-{{ $page == $products->currentPage() ? '900' : '700' }} dark:text-white hover:text-white dark:hover:text-white">{{ $page }}</a>
+                        </li>
+                    @endforeach
 
-        <!-- Next Page Link -->
-        @if ($products->hasMorePages())
-            <li class="flex items-center">
-                <a href="{{ $products->nextPageUrl() }}"
-                    class="inline-flex justify-center items-center w-8 lg:w-12.5 aspect-square bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-primary transition-colors hover:text-gray-900 dark:hover:text-gray-900">
-                    <svg class="w-2.5 aspect-square" fill="currentColor">
-                        <use xlink:href="assets/img/main/sprite.svg#arrow-right"></use>
-                    </svg>
-                </a>
-            </li>
-        @else
-            <li class="flex items-center">
-                <span class="inline-flex justify-center items-center w-8 lg:w-12.5 aspect-square bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white opacity-40 pointer-events-none">
-                    <svg class="w-2.5 aspect-square" fill="currentColor">
-                        <use xlink:href="assets/img/main/sprite.svg#arrow-right"></use>
-                    </svg>
-                </span>
-            </li>
-        @endif
-    </ul>
-</nav>
-
+                    <!-- Next Page Link -->
+                    @if ($products->hasMorePages())
+                        <li class="flex items-center">
+                            <a href="{{ $products->nextPageUrl() }}"
+                                class="inline-flex justify-center items-center w-8 lg:w-12.5 aspect-square bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-primary transition-colors hover:text-gray-900 dark:hover:text-gray-900">
+                                <svg class="w-2.5 aspect-square" fill="currentColor">
+                                    <use xlink:href="assets/img/main/sprite.svg#arrow-right"></use>
+                                </svg>
+                            </a>
+                        </li>
+                    @else
+                        <li class="flex items-center">
+                            <span
+                                class="inline-flex justify-center items-center w-8 lg:w-12.5 aspect-square bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white opacity-40 pointer-events-none">
+                                <svg class="w-2.5 aspect-square" fill="currentColor">
+                                    <use xlink:href="assets/img/main/sprite.svg#arrow-right"></use>
+                                </svg>
+                            </span>
+                        </li>
+                    @endif
+                </ul>
+            </nav>
 
         </div>
     </div>

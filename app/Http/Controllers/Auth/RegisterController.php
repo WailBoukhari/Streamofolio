@@ -15,7 +15,7 @@ class RegisterController extends Controller
 
     public function store(Request $request)
     {
-        $messages = [
+        $registerMessages = [
             'username.required' => 'The username field is required.',
             'username.max' => 'The username may not be greater than :max characters.',
             'username.unique' => 'The username has already been taken.',
@@ -32,8 +32,7 @@ class RegisterController extends Controller
             'username' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ], $messages);
-
+        ], $registerMessages);
         $user = User::create([
             'username' => $request->username,
             'email' => $request->email,
@@ -41,7 +40,7 @@ class RegisterController extends Controller
             'email_verified_at' => null,
 
         ]);
-        
+
 
         event(new Registered($user));
         Auth::login($user);
@@ -51,6 +50,7 @@ class RegisterController extends Controller
         } else {
             return redirect()->route('dashboard');
         }
-        
+
     }
+
 }

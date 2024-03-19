@@ -58,10 +58,14 @@
                     </div>
 
                     <div class="flex mb-6 lg:mb-12">
-                        <button type="submit"
-                            class="inline-flex text-center font-bold leading-none transition-colors uppercase justify-center gap-x-3 py-4 px-4 md:py-[18px] lg:px-8 text-sm text-white bg-primary hover:bg-primary/90 basis-full md:basis-1/2 lg:basis-2/5">
-                            + Add to cart
-                        </button>
+                        <form action="{{ route('cart.add') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="product_id" value="{{ $product->id }}">
+                            <button type="submit"
+                                class="inline-flex text-center font-bold leading-none transition-colors uppercase justify-center gap-x-3 py-4 px-4 md:py-[18px] lg:px-8 text-sm text-white bg-primary hover:bg-primary/90 basis-full md:basis-1/2 lg:basis-2/5">
+                                + Add to cart
+                            </button>
+                        </form>
                     </div>
 
                     <div class="flex gap-3">
@@ -105,6 +109,7 @@
                                 <form class="grid grid-cols-1 md:grid-cols-2 gap-7" action="{{ route('store.review') }}"
                                     method="POST">
                                     @csrf
+                                    <input type="hidden" name="product_id" value="{{ $product->id }}">
                                     <div class="md:col-span-1">
                                         <label
                                             class="block text-sm font-bold uppercase tracking-tight text-gray-900 dark:text-white [&:not(:empty)]:mb-2.5"
@@ -171,13 +176,15 @@
                                                         @for ($i = 0; $i < $review->rating; $i++)
                                                             <svg role="img"
                                                                 class="h-[13px] w-[13px] fill-gray-200 dark:fill-white/20">
-                                                                <use xlink:href="assets/img/main/sprite.svg#star"></use>
+                                                                <use xlink:href="assets/img/main/sprite.svg#star">
+                                                                </use>
                                                             </svg>
                                                         @endfor
                                                         @for ($i = $review->rating; $i < 5; $i++)
                                                             <svg role="img"
                                                                 class="h-[13px] w-[13px] fill-gray-900 dark:fill-white">
-                                                                <use xlink:href="assets/img/main/sprite.svg#star"></use>
+                                                                <use xlink:href="assets/img/main/sprite.svg#star">
+                                                                </use>
                                                             </svg>
                                                         @endfor
                                                     </div>
@@ -187,8 +194,8 @@
                                                 </div>
                                                 <div
                                                     class="text-base leading-tight uppercase font-bold tracking-tighter text-gray-900 dark:text-white">
-                                                    by <strong class="text-primary">{{ $review->username }}</strong> <time
-                                                        class=""
+                                                    by <strong class="text-primary">{{ $review->username }}</strong>
+                                                    <time class=""
                                                         datetime="{{ $review->created_at }}">{{ $review->created_at->diffForHumans() }}</time>
                                                 </div>
                                             </div>

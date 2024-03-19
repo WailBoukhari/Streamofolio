@@ -5,11 +5,13 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ShippingController;
 use Illuminate\Support\Facades\Route;
+
 
 
 Route::get('/', [MainController::class, 'home'])->name('home');
@@ -21,9 +23,9 @@ Route::get('/stream', [MainController::class, 'stream'])->name('stream');
 Route::get('/donate', [MainController::class, 'donate'])->name('donate');
 
 
-Route::middleware(['auth.verify' ,'client'])->group(function () {
+Route::middleware(['auth.verify', 'client'])->group(function () {
     Route::get('/account-info', [MainController::class, 'accountInfo'])->name('account-info');
-    Route::get('/account-orders', [MainController::class, 'accountSrders'])->name('account-orders');
+    Route::get('/account-orders', [MainController::class, 'accountOrders'])->name('account-orders');
     Route::get('/account-shipping', [MainController::class, 'accountShipping'])->name('account-shipping');
     Route::post('/shipping', [ShippingController::class, 'store'])->name('store.shipping');
     Route::get('/account', [MainController::class, 'account'])->name('account');
@@ -31,6 +33,9 @@ Route::middleware(['auth.verify' ,'client'])->group(function () {
     Route::get('/cart', [MainController::class, 'cart'])->name('cart');
     Route::get('/checkout', [MainController::class, 'checkout'])->name('checkout');
     Route::post('/profile/update', [ClientController::class, 'updateProfile'])->name('profile.update');
+    Route::post('/add-to-cart', [CartController::class, 'addToCart'])->name('cart.add');
+    Route::post('/cart/clear', [CartController::class, 'clear'])->name('cart.clear');
+    Route::delete('/cart/{key}', [CartController::class, 'delete'])->name('cart.delete');
 
 });
 

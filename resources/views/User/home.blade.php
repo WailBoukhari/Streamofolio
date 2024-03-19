@@ -13,7 +13,6 @@
                 </h1>
                 <div
                     class="text-lg font-medium uppercase tracking-tighter text-gray-900 dark:text-white sm:text-xl lg:pt-4 lg:text-2xl xl:pt-5 xl:pl-3 xl:text-[26px]">
-                    MON - WED - SUN - 9.00PM PCT
                 </div>
             </div>
 

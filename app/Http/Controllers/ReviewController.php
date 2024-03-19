@@ -16,20 +16,20 @@ class ReviewController extends Controller
             'review-title' => 'required',
             'review-rating' => 'required|numeric|min:1|max:5',
             'review-comment' => 'required',
+            'product_id'=> 'required',
         ]);
 
-        // Get the authenticated user
         $user = Auth::user();
-        // Create a new review instance
+
         $review = new Review();
         $review->title = $validatedData['review-title'];
         $review->rating = $validatedData['review-rating'];
         $review->comment = $validatedData['review-comment'];
         $review->user_id = $user->id;
+        $review->product_id = $validatedData['product_id'];
 
         $review->save();
 
-        // Redirect back or to a success page
         return redirect()->back()->with('success', 'Review submitted successfully!');
     }
 }
