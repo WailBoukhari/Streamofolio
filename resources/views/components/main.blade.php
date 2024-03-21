@@ -22,6 +22,8 @@
         <link
             href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;700&amp;family&#x3D;Rock+Salt&display=swap"
             rel="stylesheet">
+        <!-- Tailwind CSS CDN -->
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
         <!-- Vendor CSS -->
         <link href="{{ asset('assets/vendors/common/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
         <link href="{{ asset('assets/vendors/common/swiper/css/swiper-bundle.min.css') }}" rel="stylesheet">

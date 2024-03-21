@@ -7,6 +7,7 @@ use App\Models\Admin;
 use App\Models\Affiliate;
 use App\Models\Bio;
 use App\Models\Gear;
+use App\Models\Order;
 use App\Models\Partner;
 use App\Models\Product;
 use App\Models\Review;
@@ -38,8 +39,8 @@ class MainController extends Controller
 
     public function cart()
     {
-        $cartItems = Session::get('cart');
-       if (empty ($cartItems)) {
+        $cartItems = Session::get('cart', []);
+        if (empty ($cartItems)) {
             $cartTotal = 0;
             $promoDiscount = 0;
             $totalAfterDiscount = 0;
@@ -55,9 +56,17 @@ class MainController extends Controller
 
             $promoDiscount = Session::get('coupon_discount', 0);
             $totalAfterDiscount = Session::get('total_after_discount', $cartTotal + $shippingCost);
+
+            // Store calculated values in session
+            Session::put('cart_total', $cartTotal);
+            Session::put('shipping_cost', $shippingCost);
+            Session::put('promo_discount', $promoDiscount);
+            Session::put('total_after_discount', $totalAfterDiscount);
         }
+
         return view('User.cart', compact('cartItems', 'cartTotal', 'shippingCost', 'promoDiscount', 'totalAfterDiscount'));
     }
+
 
 
     public function contact()
@@ -120,8 +129,10 @@ class MainController extends Controller
 
     public function accountOrders()
     {
-        return view('User.account-orders');
-    }
+        $orders = Order::where('user_id', auth()->id())->orderBy('order_date', 'desc')->get();
+
+        return view('User.account-orders' , compact('orders'));
+    } 
 
     public function accountShipping()
     {
@@ -138,7 +149,9 @@ class MainController extends Controller
 
     public function checkout()
     {
-        return view('User.checkout');
+        $cart = Session::get('cart', []);
+        $shippingDetail = Auth::user()->shipping;
+        return view('User.checkout', compact('shippingDetail' , 'cart'));
     }
     public function dashboard()
     {

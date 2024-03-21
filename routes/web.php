@@ -7,11 +7,12 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ClientController;
-use App\Http\Controllers\CouponController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ShippingController;
 use Illuminate\Support\Facades\Route;
+
 
 
 
@@ -33,13 +34,18 @@ Route::middleware(['auth.verify', 'client'])->group(function () {
     Route::get('/account', [MainController::class, 'account'])->name('account');
     Route::post('/store-review', [ReviewController::class, 'store'])->name('store.review');
     Route::get('/cart', [MainController::class, 'cart'])->name('cart');
-    Route::get('/checkout', [MainController::class, 'checkout'])->name('checkout');
+    Route::post('/checkout', [MainController::class, 'checkout'])->name('checkout');
     Route::post('/profile/update', [ClientController::class, 'updateProfile'])->name('profile.update');
     Route::post('/add-to-cart', [CartController::class, 'addToCart'])->name('cart.add');
     Route::post('/cart/clear', [CartController::class, 'clear'])->name('cart.clear');
     Route::delete('/cart/{key}', [CartController::class, 'delete'])->name('cart.delete');
     Route::put('/cart/{key}', [CartController::class, 'update'])->name('cart.update');
     Route::post('/redeem-coupon', [CartController::class, 'applyCoupon'])->name('redeem.coupon');
+    Route::post('/place-order', [OrderController::class, 'placeOrder'])->name('place.order');
+    Route::get('/thank-you', [OrderController::class, 'thankyou'])->name('thankyou');
+    Route::delete('/cancel-order/{order}', [OrderController::class, 'cancelOrder'])->name('cancel.order');
+    Route::delete('/delete-order/{order}', [OrderController::class, 'deleteOrder'])->name('delete.order');
+
 });
 
 

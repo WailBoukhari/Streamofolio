@@ -26,7 +26,7 @@
             </nav>
 
             <form class="grid grid-cols-12 gap-y-7 gap-x-5 md:gap-x-6 lg:gap-x-7.5"
-                action="{{ route('store.shipping') }}" method="post">
+                action="{{ route('store.shipping') }}" method="POST">
                 @csrf
                 <div class="col-span-full md:col-span-4">
                     <label
@@ -116,8 +116,8 @@
                     <label
                         class="block text-sm font-bold uppercase tracking-tight text-gray-900 dark:text-white [&:not(:empty)]:mb-2.5"
                         for="shipping-state">State <span class="text-primary">*</span></label>
-                    <input value="{{ old('shipping-first-name', $shippingDetail->state ?? '') }}"
-                        name="shipping-state" id="shipping-state"
+                    <input value="{{ old('shipping-first-name', $shippingDetail->state ?? '') }}" name="shipping-state"
+                        id="shipping-state"
                         class="px-4 py-2 border-base bg-white font-medium leading-8 text-gray-900 transition-all duration-150 focus:border-accent focus:bg-white focus:text-gray-900 focus:outline-0 focus:ring-0 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:focus:border-accent dark:focus:bg-gray-900 w-full"
                         type="text" placeholder="Enter State">
                     <p class="group-[.is-error]:block mt-2 hidden text-xs text-danger"></p>
@@ -126,8 +126,8 @@
                     <label
                         class="block text-sm font-bold uppercase tracking-tight text-gray-900 dark:text-white [&:not(:empty)]:mb-2.5"
                         for="shipping-city">City <span class="text-primary">*</span></label>
-                    <input value="{{ old('shipping-first-name', $shippingDetail->city ?? '') }}"
-                        name="shipping-city" id="shipping-city"
+                    <input value="{{ old('shipping-first-name', $shippingDetail->city ?? '') }}" name="shipping-city"
+                        id="shipping-city"
                         class="px-4 py-2 border-base bg-white font-medium leading-8 text-gray-900 transition-all duration-150 focus:border-accent focus:bg-white focus:text-gray-900 focus:outline-0 focus:ring-0 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:focus:border-accent dark:focus:bg-gray-900 w-full"
                         type="text" placeholder="Enter City">
                     <p class="group-[.is-error]:block mt-2 hidden text-xs text-danger"></p>

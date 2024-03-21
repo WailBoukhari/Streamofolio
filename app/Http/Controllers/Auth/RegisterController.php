@@ -33,24 +33,29 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ], $registerMessages);
+
         $user = User::create([
             'username' => $request->username,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'email_verified_at' => null,
-
         ]);
 
-
         event(new Registered($user));
-        Auth::login($user);
 
-        if (!$user->hasVerifiedEmail()) {
-            return redirect()->route('verification.notice');
-        } else {
-            return redirect()->route('dashboard');
+        if ($user) {
+            Auth::login($user);
+
+            if (!$user->hasVerifiedEmail()) {
+                return redirect()->route('verification.notice');
+            } else {
+                return redirect()->route('dashboard');
+            }
         }
 
+        // If user creation fails for some reason, redirect back with an error message
+        return redirect()->back()->with('error', 'Failed to create user.');
     }
+
 
 }
